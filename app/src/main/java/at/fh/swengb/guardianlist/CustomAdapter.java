@@ -53,7 +53,7 @@ public class CustomAdapter extends BaseAdapter {
         TextView viewPhone=(TextView)view.findViewById(R.id.textViewListPhone);
 
         Guardian guardian = listGuardians.get(i);
-        viewName.setText(guardian.getName()+" "+guardian.getDescription());
+        viewName.setText(guardian.getName()+", "+guardian.getDescription());
         viewAddress.setText(guardian.getPantheonLocation());
         viewPhone.setText(guardian.getPhoneNumber());
 
