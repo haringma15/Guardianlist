@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -24,6 +23,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        myListView = (ListView) findViewById(R.id.myGuardianList);
+
         listGuardians = new ArrayList<>();
         listGuardians.add(new Guardian("Ymir","Norse","Father of the Frostgiants","Shards of Ice", 200, 510, 38, false, "Sjogata 1, 9008 Tromso", "+47 77 64 70 20 -1"));
         listGuardians.add(new Guardian("Fafnir","Norse","Lord of Glittering Gold","Dragonic Corruption", 200, 495, 37, false, "Sjogata 1, 9008 Tromso", "+47 77 64 70 20 -2"));
@@ -34,8 +35,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         myAdapter = new CustomAdapter(this,listGuardians);
         myListView.setAdapter(myAdapter);
-
-        myListView = (ListView) findViewById(R.id.myGuardianList);
 
         myListView.setOnItemClickListener(this);
     }
